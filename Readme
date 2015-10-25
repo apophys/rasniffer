@@ -1,0 +1,20 @@
+Program 'rasniffer'
+
+# rasniffer -i <interface> [-r] [-s]
+
+The program waits on an interface <interface> for ICMPv6 packets.
+It uses the NIC in promiscuous mode.
+After receiving an ICMPv6 packet it filters out the Router Advertisement
+packets.
+
+Information about the ICMP packet as well as RA information is then
+printed to the standard output.
+
+(source, destination IPv6 address, router lifetime, prefix, MTU,
+source / target link layer address, ...)
+
+With the -r option the sniffer sets the priority of a RA packet
+to low and sends it to the network.
+
+The -s option causes the program to send an Router Solicitation
+packet with source-link address set to the MAC address of the interface <interface>.
