@@ -12,11 +12,13 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
-#include <sys/sysctl.h>
 
 #include <net/if.h>
 #ifndef __linux__
 #include <net/if_dl.h>
+#include <sys/sysctl.h>
+#else
+#include <linux/sysctl.h>
 #endif // __linux__
 #include <netinet/in.h>
 #include <arpa/inet.h>

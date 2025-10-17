@@ -28,7 +28,11 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
+#ifndef __linux__
 #include <sys/sysctl.h>
+#else
+#include <linux/sysctl.h>
+#endif // __linux__
 
 #include <net/if.h>
 #include <netinet/in.h>
